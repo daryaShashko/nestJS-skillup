@@ -1,1 +1,36 @@
-http://localhost:3000
+@baseUrl = http://localhost:3000
+@contentType = application/json
+
+### Get all tasks
+GET {{baseUrl}}/tasks
+
+### Get task by id
+GET {{baseUrl}}/tasks/{{taskId}}
+
+### Создать новую задачу
+# @name createTask
+POST {{baseUrl}}/tasks
+Content-Type: {{contentType}}
+
+{
+  "title": "Learn NestJS2",
+  "description": "description of the tasks11231",
+  "status": "DONE"
+}
+
+> {%
+client.global.set("taskId", response.body.id);
+%}
+
+
+### Delete task
+DELETE {{baseUrl}}/tasks/{{taskId}}
+
+### Upadte task
+PATCH {{baseUrl}}/tasks/{{taskId}}
+Content-Type: {{contentType}}
+
+{
+  "description": "description of the tasks2",
+  "status": "OPEN"
+}
