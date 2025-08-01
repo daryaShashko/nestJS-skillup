@@ -13,9 +13,9 @@ POST {{baseUrl}}/tasks
 Content-Type: {{contentType}}
 
 {
-  "title": "Learn NestJS2",
+  "title": "Learn NestJS",
   "description": "description of the tasks11231",
-  "status": "DONE"
+  "status": "OPEN"
 }
 
 > {%
